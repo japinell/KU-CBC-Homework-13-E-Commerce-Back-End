@@ -1,4 +1,4 @@
-# 13 Object-Relational Mapping (ORM): E-Commerce Back End
+# 13 Object-Relational Mapping: E-Commerce Back End
 
 ## Description
 
