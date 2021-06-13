@@ -30,12 +30,12 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## Table of Contents
 
-- [Core Features](#features)
+- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
 
-## Core Features
+## Features
 
 The application features the use of **Database Models** to define the logical structure of the database using **Sequelize** and **MySQL**. Four models are shipped with this version of the application: **Categories**, **Products**, **Tags**, and **ProductTag**. Each of these models have data attributes that follow common constraints, validations, and rules found in a production environment, including, primary keys, referential integrity, and not null constraints, and auto increment and default rules.
 
