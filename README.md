@@ -1,12 +1,8 @@
 # 13 Object-Relational Mapping (ORM): E-Commerce Back End
 
-## Your Task
+## Description
 
-Internet retail, also known as **e-commerce**, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
-
-Your task is to build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a MySQL database.
-
-Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the acceptance criteria being met. You’ll need to submit a link to the video and add it to the readme of your project.
+Build the back end for an e-commerce site by modifying starter code. You’ll configure a working **Express.js** API to use **Sequelize** to interact with a **MySQL** database.
 
 ## User Story
 
@@ -32,218 +28,113 @@ WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete data in my database
 ```
 
-## Mock-Up
+## Table of Contents
 
-The following animation shows the application's GET routes to return all categories, all products, and all tags being tested in Insomnia Core:
+- [Core Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
-![In Insomnia Core, the user tests “GET tags,” “GET Categories,” and “GET All Products.”.](./Assets/13-orm-homework-demo-01.gif)
+## Core Features
 
-The following animation shows the application's GET routes to return a single category, a single product, and a single tag being tested in Insomnia Core:
+The application features the use of **Database Models** to define the logical structure of the database using **Sequelize** and **MySQL**. Four models are shipped with this version of the application: **Categories**, **Products**, **Tags**, and **ProductTag**. Each of these models have data attributes that follow common constraints, validations, and rules found in a production environment, including, primary keys, referential integrity, and not null constraints, and auto increment and default rules.
 
-![In Insomnia Core, the user tests “GET tag by id,” “GET Category by ID,” and “GET One Product.”](./Assets/13-orm-homework-demo-02.gif)
+Referential integrity is managed through the use of **Associations** in **Sequelize**. These associations are converted and executed against the database dialect when the application starts. The following associations are featured with the application:
 
-The following animation shows the application's POST, PUT, and DELETE routes for categories being tested in Insomnia Core:
+- Product to Category - A Product belongs to a single Category, but multiple Products can have the same Category. (One to many relationship.)
+- Product to Tag - A Product can have more than one Tag, and a Tag can have more than one Product. This relationship is modeled through a **junction** model, ProductTag, which holds the primary key for Product and Tag. (Many to many relationship.)
 
-![In Insomnia Core, the user tests “DELETE Category by ID,” “CREATE Category,” and “UPDATE Category.”](./Assets/13-orm-homework-demo-03.gif)
+RESTful API routes are used to handle the CRUD operations for the models. These routes feature the logic to **GET**, **POST**, **PUT**, and **DELETE** Categories, Products, and Tags, including ProductTags, using **Sequelize** and **Express**. The application not only features the ability to perform operations on the direct models, but also on the related models; for example, the POST method on the Product model is used to insert a new product along with its Tag records by passing a JSON object representing an abstraction of the associated models.
 
-Your walkthrough video should also show the POST, PUT, and DELETE routes for products and tags being tested in Insomnia Core.
+## Installation
 
-## Getting Started
+This application requires [Node.js](https://nodejs.org/en/) Runtime Library, and [Express.js](https://www.npmjs.com/package/express), [Sequelize](https://www.npmjs.com/package/sequelize), [DotEnv](https://www.npmjs.com/package/dotenv), and [MySQL2](https://www.npmjs.com/package/mysql2) libraries.
 
-You’ll need to use the [MySQL2](https://www.npmjs.com/package/mysql2) and [Sequelize](https://www.npmjs.com/package/sequelize) packages to connect your Express.js API to a MySQL database and the [dotenv](https://www.npmjs.com/package/dotenv) package to use environment variables to store sensitive data.
+A JSON file containing these dependencies is included with this project. To set up the development environment for the application, simply run the following command:
 
-Use the `schema.sql` file in the `db` folder to create your database with MySQL shell commands. Use environment variables to store sensitive data like your MySQL username, password, and database name.
+```bash
+npm install
+```
 
-### Database Models
+Alternatively, you can run the following commands in any order:
 
-Your database should contain the following four models, including the requirements listed for each model:
+```bash
+npm i express
+npm i sequelize
+npm i dotenv
+npm i mysql2
+```
 
-- `Category`
+Next, review the database connection parameters contained in the **.env** file and adjust them appropriately. By default, an **ecommerce_db** database will be created.
 
-  - `id`
+Finally, the following command must be run to seed the database with sample data:
 
-    - Integer.
+```bash
+npm run seed
+```
 
-    - Doesn't allow null values.
+Or,
 
-    - Set as primary key.
+```bash
+node seeds/index.js
+```
 
-    - Uses auto increment.
+After these commands, the database has been created and seeded with sample data.
 
-  - `category_name`
+## Usage
 
-    - String.
+The application has been coded to perform CRUD operations against a live database using the most common HTTP methods for REST APIs: _GET_, _POST_, _PUT_, and _DELETE_. Therefore, make sure to follow the [Installation](#installation) instructions above if you want to test the application in your development environment.
 
-    - Doesn't allow null values.
+As stated before, the application only includes _backend_ features; so, to test these features in real time, you will need to use any tool for API testing similar to **Insomnia**.
 
-- `Product`
+Videos showing the application functionality are provided below:
 
-  - `id`
+- [Categories](#categories)
+- [Products](#products)
+- [Tags](#tags)
 
-    - Integer.
+### Categories
 
-    - Doesn't allow null values.
+- GET All Categories
+- GET Category By Id
+- POST Category
+- PUT Category
+- DELETE Category
 
-    - Set as primary key.
+### Products
 
-    - Uses auto increment.
+- GET All Products
+- GET Product By Id
+- POST Product
+- PUT Product
+- DELETE Product
 
-  - `product_name`
+### Tags
 
-    - String.
+- GET All Tags
+- GET Tag By Id
+- POST Tag
+- PUT Tag
+- DELETE Tag
 
-    - Doesn't allow null values.
+## License
 
-  - `price`
+This project is licensed under The MIT License. Refer to https://opensource.org/licenses/MIT for more information of what you can and cannot do with this project. See contact information below if you have questions, comments, or suggestions for the project.
 
-    - Decimal.
+## Contributing Guidelines
 
-    - Doesn't allow null values.
+Want to contribute to this project? You may clone or fork the project in GitHub. Note the licesing information referred in this file.
 
-    - Validates that the value is a decimal.
+## Contact Information
 
-  - `stock`
+For questions, comments, or suggestions, please contact me by E-Mail:
 
-    - Integer.
+japinell@yahoo.com
 
-    - Doesn't allow null values.
+Check out my other **cool** projects in GitHub - https://github.com/japinell
 
-    - Set a default value of `10`.
+## License
 
-    - Validates that the value is numeric.
+This application is licensed under the following license:
 
-  - `category_id`
-
-    - Integer.
-
-    - References the `Category` model's `id`.
-
-- `Tag`
-
-  - `id`
-
-    - Integer.
-
-    - Doesn't allow null values.
-
-    - Set as primary key.
-
-    - Uses auto increment.
-
-  - `tag_name`
-
-    - String.
-
-- `ProductTag`
-
-  - `id`
-
-    - Integer.
-
-    - Doesn't allow null values.
-
-    - Set as primary key.
-
-    - Uses auto increment.
-
-  - `product_id`
-
-    - Integer.
-
-    - References the `Product` model's `id`.
-
-  - `tag_id`
-
-    - Integer.
-
-    - References the `Tag` model's `id`.
-
-### Associations
-
-You'll need to execute association methods on your Sequelize models to create the following relationships between them:
-
-- `Product` belongs to `Category`, and `Category` has many `Product` models, as a category can have multiple products but a product can only belong to one category.
-
-- `Product` belongs to many `Tag` models, and `Tag` belongs to many `Product` models. Allow products to have multiple tags and tags to have many products by using the `ProductTag` through model.
-
-> **Hint:** Make sure you set up foreign key relationships that match the column we created in the respective models.
-
-### Fill Out the API Routes to Perform RESTful CRUD Operations
-
-Fill out the unfinished routes in `product-routes.js`, `tag-routes.js`, and `category-routes.js` to perform create, read, update, and delete operations using your Sequelize models.
-
-Note that the functionality for creating the many-to-many relationship for products has already been completed for you.
-
-> **Hint**: Be sure to look at the mini-project code for syntax help and use your model's column definitions to figure out what `req.body` will be for POST and PUT routes!
-
-### Seed the Database
-
-After creating the models and routes, run `npm run seed` to seed data to your database so that you can test your routes.
-
-### Sync Sequelize to the Database on Server Start
-
-Create the code needed in `server.js` to sync the Sequelize models to the MySQL database on server start.
-
-## Grading Requirements
-
-This homework is graded based on the following criteria:
-
-### Deliverables: 10%
-
-- The GitHub repository containing your application code.
-
-### Walkthrough Video: 37%
-
-- A walkthrough video that demonstrates the functionality of the e-commerce back end must be submitted, and a link to the video should be included in your readme file.
-
-- The walkthrough video must show all of the technical acceptance criteria being met.
-
-- The walkthrough video must demonstrate how to create the schema from the MySQL shell.
-
-- The walkthrough video must demonstrate how to seed the database from the command line.
-
-- The walkthrough video must demonstrate how to start the application’s server.
-
-- The walkthrough video must demonstrate GET routes for all categories, all products, and all tags being tested in Insomnia Core.
-
-- The walkthrough video must demonstrate GET routes for a single category, a single product, and a single tag being tested in Insomnia Core.
-
-- The walkthrough video must demonstrate POST, PUT, and DELETE routes for categories, products, and tags being tested in Insomnia Core.
-
-### Technical Acceptance Criteria: 40%
-
-- Satisfies all of the preceding acceptance criteria plus the following:
-
-  - Connects to a MySQL database using the [MySQL2](https://www.npmjs.com/package/mysql) and [Sequelize](https://www.npmjs.com/package/sequelize) packages.
-
-  - Stores sensitive data, like a user’s MySQL username, password, and database name, using environment variables through the [dotenv](https://www.npmjs.com/package/dotenv) package.
-
-  - Syncs Sequelize models to a MySQL database on the server start.
-
-  - Includes column definitions for all four models outlined in the homework instructions.
-
-  - Includes model associations outlined in the homework instructions.
-
-### Repository Quality: 13%
-
-- Repository has a unique name.
-
-- Repository follows best practices for file structure and naming conventions.
-
-- Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-- Repository contains multiple descriptive commit messages.
-
-- Repository contains quality readme with description and a link to a walkthrough video.
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-- A walkthrough video demonstrating the functionality of the application and all of the acceptance criteria being met.
-
-- The URL of the GitHub repository. Give the repository a unique name and include a readme describing the project.
-
----
-
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)(https://opensource.org/licenses/MIT)
