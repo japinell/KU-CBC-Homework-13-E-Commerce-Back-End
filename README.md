@@ -37,14 +37,18 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## Features
 
-The application features the use of **Database Models** to define the logical structure of the database using **Sequelize** and **MySQL**. Four models are shipped with this version of the application: **Categories**, **Products**, **Tags**, and **ProductTag**. Each of these models have data attributes that follow common constraints, validations, and rules found in a production environment, including, primary keys, referential integrity, and not null constraints, and auto increment and default rules.
+The application features the use of **Database Models** to define the logical structure of the database using **Sequelize** and **MySQL**.
+
+Four models are shipped with this version of the application: **Categories**, **Products**, **Tags**, and **ProductTag**. Each of these models have data attributes that follow common constraints, validations, and rules found in a production environment, including, primary keys, referential integrity, and not null constraints, and auto increment and default rules.
 
 Referential integrity is managed through the use of **Associations** in **Sequelize**. These associations are converted and executed against the database dialect when the application starts. The following associations are featured with the application:
 
 - Product to Category - A Product belongs to a single Category, but multiple Products can have the same Category. (One to many relationship.)
 - Product to Tag - A Product can have more than one Tag, and a Tag can have more than one Product. This relationship is modeled through a **junction** model, ProductTag, which holds the primary key for Product and Tag. (Many to many relationship.)
 
-RESTful API routes are used to handle the CRUD operations for the models. These routes feature the logic to **GET**, **POST**, **PUT**, and **DELETE** Categories, Products, and Tags, including ProductTags, using **Sequelize** and **Express**. The application not only features the ability to perform operations on the direct models, but also on the related models; for example, the POST method on the Product model is used to insert a new product along with its Tag records by passing a JSON object representing an abstraction of the associated models.
+RESTful API routes are used to handle the CRUD operations for the models. These routes feature the logic to **GET**, **POST**, **PUT**, and **DELETE** Categories, Products, and Tags, including ProductTags, using **Sequelize** and **Express**.
+
+An important feature of the application is that it is not only able to perform operations on the direct models, but also on the related ones; for example, the POST method on the Product model is used to insert a new product along with its Tag records by passing a JSON object representing an abstraction of the associated models.
 
 ## Installation
 
@@ -79,15 +83,15 @@ Or,
 node seeds/index.js
 ```
 
-After these commands, the database has been created and seeded with sample data.
+After running the commands above, the database has been created and seeded with sample data.
 
 ## Usage
 
 The application has been coded to perform CRUD operations against a live database using the most common HTTP methods for REST APIs: _GET_, _POST_, _PUT_, and _DELETE_. Therefore, make sure to follow the [Installation](#installation) instructions above if you want to test the application in your development environment.
 
-As stated before, the application only includes _backend_ features; so, to test these features in real time, you will need to use any tool for API testing similar to **Insomnia**.
+As stated before, the application only includes _backend_ features; so, to test these features in real time, you will need to use any tool for API testing similar to **Insomnia Core**.
 
-Videos showing the application functionality are provided below:
+Examples of how to use the application are provided in the following videos:
 
 - [Categories](#categories)
 - [Products](#products)
