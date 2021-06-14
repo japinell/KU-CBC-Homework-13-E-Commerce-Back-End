@@ -99,7 +99,7 @@ Once the database is created and seeded with sample data, run the following comm
 node server.js
 ```
 
-See a video demonstrating how to start the application [here](https://drive.google.com/file/d/1U5n1DQPT0NBUrfhs-OkoQljyQJVBMAVk/view).
+Watch a video demonstrating how to start the application [here](https://drive.google.com/file/d/1U5n1DQPT0NBUrfhs-OkoQljyQJVBMAVk/view).
 
 ## Usage
 
@@ -109,7 +109,7 @@ As stated before, the application only includes _backend_ features; so, to test 
 
 Examples of how to use the application are provided in the following videos:
 
-- [Categories](https://drive.google.com/file/d/1cxB7I41wX6AWwSDz2RDOpIf9_2EbgBuZ/view)
+- [Categories](https://drive.google.com/file/d/1r2W0Xf9NQAyH0EK3gmUQVqBgdLFj-ker/view)
 
   - GET All Categories
   - GET Category By Id
