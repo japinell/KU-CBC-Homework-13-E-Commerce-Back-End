@@ -99,7 +99,7 @@ Once the database is created and seeded with sample data, run the following comm
 node server.js
 ```
 
-Watch a video demonstrating how to start the application [here](https://drive.google.com/file/d/1U5n1DQPT0NBUrfhs-OkoQljyQJVBMAVk/view).
+Watch a video demonstrating how to start the application and synchronize the models to the MySQL database [here](https://drive.google.com/file/d/1FW3aymd95Fb1b-jld2spHFBqcV22KwbW/view).
 
 ## Usage
 
