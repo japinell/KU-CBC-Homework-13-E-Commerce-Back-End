@@ -69,7 +69,7 @@ npm i dotenv
 npm i mysql2
 ```
 
-Next, review the database connection parameters contained in the **.env** file and adjust them appropriately. An example of this file is provided [here](https://drive.google.com/file/d/1H1QxMmQ2VGIOGdsv1L2Kw3DSkkTOlBN5/view).
+Next, review the database connection parameters contained in the **.env** file and adjust them appropriately. A video demonstrating the structure of this file is provided [here](https://drive.google.com/file/d/1H1QxMmQ2VGIOGdsv1L2Kw3DSkkTOlBN5/view).
 
 Using MySQL console, or a tool like MySQL Workbench, run the **schema.sql** script to create the **ecommerce_db** database; the file can be located in the following location:
 
