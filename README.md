@@ -75,6 +75,8 @@ Next, review the database connection parameters contained in the **.env** file a
 db/schema.sql
 ```
 
+A video demonstrating how to create the database schema from the MySQL shell is provided [here](https://drive.google.com/file/d/1XDstDm5OJD8ybH3d6cyTK59tuLHkp-Od/view).
+
 Finally, the following command must be run to seed the database with sample data:
 
 ```bash
@@ -86,6 +88,8 @@ Or,
 ```bash
 node seeds/index.js
 ```
+
+A video demonstrating how to seed the database from the command line is provided [here](https://drive.google.com/file/d/1cxB7I41wX6AWwSDz2RDOpIf9_2EbgBuZ/view).
 
 After running the commands above, the database has been created and seeded with sample data.
 
