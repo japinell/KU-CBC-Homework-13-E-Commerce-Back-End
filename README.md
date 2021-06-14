@@ -125,7 +125,7 @@ Examples of how to use the application are provided in the following videos:
   - PUT Product
   - DELETE Product
 
-- [Tags](#tags)
+- [Tags](https://drive.google.com/file/d/1zNx3gH2KgXksgmr_AAe48F1O0lLuiQTf/view)
 
   - GET All Tags
   - GET Tag By Id
