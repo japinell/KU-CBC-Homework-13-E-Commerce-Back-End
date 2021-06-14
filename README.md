@@ -69,7 +69,11 @@ npm i dotenv
 npm i mysql2
 ```
 
-Next, review the database connection parameters contained in the **.env** file and adjust them appropriately. Using MySQL console, or a tool like MySQL Workbench, run the **schema.sql** script to create the **ecommerce_db** database:
+Next, review the database connection parameters contained in the **.env** file and adjust them appropriately. Using MySQL console, or a tool like MySQL Workbench, run the **schema.sql** script to create the **ecommerce_db** database; the file can be located in the following location:
+
+```bash
+db/schema.sql
+```
 
 Finally, the following command must be run to seed the database with sample data:
 
