@@ -93,7 +93,13 @@ node seeds/index.js
 
 A video demonstrating how to seed the database from the command line is provided [here](https://drive.google.com/file/d/1cxB7I41wX6AWwSDz2RDOpIf9_2EbgBuZ/view).
 
-After running the commands above, the database has been created and seeded with sample data.
+Once the database is created and seeded with sample data, run the following command to start the application:
+
+```bash
+node server.js
+```
+
+See a video demonstrating how to start the application [here](https://drive.google.com/file/d/1U5n1DQPT0NBUrfhs-OkoQljyQJVBMAVk/view).
 
 ## Usage
 
@@ -103,33 +109,29 @@ As stated before, the application only includes _backend_ features; so, to test 
 
 Examples of how to use the application are provided in the following videos:
 
-- [Categories](#categories)
+- [Categories](https://drive.google.com/file/d/1cxB7I41wX6AWwSDz2RDOpIf9_2EbgBuZ/view)
+
+  - GET All Categories
+  - GET Category By Id
+  - POST Category
+  - PUT Category
+  - DELETE Category
+
 - [Products](#products)
+
+  - GET All Products
+  - GET Product By Id
+  - POST Product
+  - PUT Product
+  - DELETE Product
+
 - [Tags](#tags)
 
-### Categories
-
-- GET All Categories
-- GET Category By Id
-- POST Category
-- PUT Category
-- DELETE Category
-
-### Products
-
-- GET All Products
-- GET Product By Id
-- POST Product
-- PUT Product
-- DELETE Product
-
-### Tags
-
-- GET All Tags
-- GET Tag By Id
-- POST Tag
-- PUT Tag
-- DELETE Tag
+  - GET All Tags
+  - GET Tag By Id
+  - POST Tag
+  - PUT Tag
+  - DELETE Tag
 
 ## License
 
